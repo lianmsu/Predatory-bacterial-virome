@@ -1,2 +1,2 @@
 # Predatory-bacterial-virome
-Scripts for predatory bacterial virome analyses
+Scripts for virome analyses of myxobacteria.

@@ -1,10 +1,27 @@
 # Predatory-bacterial-virome
 
-> **The virome of globally distributed myxobacteria** 论文的代码仓库
-> （Li, P. & Ni, J.）
+> **CRISPR mapping unveils global prevalence of viral predators of Myxobacteria**
+> （CRISPR 定位揭示黏细菌病毒捕食者的全球分布）论文的代码仓库
+> （Li, P. & Ni, J., bioRxiv 2026）
+>
+> 预印本：<https://www.biorxiv.org/content/10.64898/2026.09.14.751636v1>
+> DOI：<https://doi.org/10.64898/2026.09.14.751636>
 
 本仓库收录了研究的全部代码：上游生物信息学流程（从收集的黏细菌基因组到病毒目录及其注释），
 以及下游 R 统计分析与绘图脚本。
+
+## 研究概要
+
+- **3,229** 个黏细菌基因组（NCBI GenBank、6 个公共数据集 + 本研究新 MAG），对应图 S1；
+- 基于 CRISPR spacer 的宿主—病毒关联分析，从 4,696 个捕食者基因组中得到 **790 个非冗余
+  黏细菌噬菌体（myxophage / vOTU）**，覆盖全球多类生态系统，对应图 3；
+- 基因组共编码 44,698 个 BGC、2,334 个 AMP、21,007 个防御系统、5,130 个分泌系统和
+  11,969 个 MGE，其携带的功能基因由 `analyses/06_host_function` 分析，对应图 1；
+- 基因共享网络、全蛋白组系统发育与基因组间比较鉴定出 **6 个此前未描述的黏细菌病毒谱系
+  （MV-1 – MV-6）**，对应 `analyses/04_new_viral_groups`、`analyses/05_marker_phylogeny`
+  与图 4–5；
+- MV-1 同时携带抗 CRISPR 蛋白 *AcrIIA15* 与紧邻 CRISPR 阵列的 *Cas12m* 效应蛋白，
+  对应 `analyses/05_marker_phylogeny/02_Cas12m_tree_annotation.R` 与图 6。
 
 ## 目录结构
 
@@ -50,8 +67,8 @@ Rscript /path/to/Predatory-bacterial-virome/analyses/02_phage_catalog/01_viral_g
 
 ## 数据
 
-仓库只放代码。黏细菌基因组集合、病毒目录与注释结果随论文以 Supplementary Data 提供；新
-MAG 的测序数据在 NCBI SRA 的登录号见论文。脚本所需的数据目录结构见
+仓库只放代码。黏细菌基因组集合、病毒目录与注释结果随预印本以 Supplementary Data 提供；新
+MAG 的测序数据在 NCBI SRA 的登录号见预印本。脚本所需的数据目录结构见
 [docs/04_data_availability.md](docs/04_data_availability.md)。
 
 ## 关于旧版仓库
@@ -63,3 +80,17 @@ MAG 的测序数据在 NCBI SRA 的登录号见论文。脚本所需的数据目
 
 仓库中已不含任何绝对路径、个人主目录或本地 Windows 目录：全部由 `GTR_DATA`、`GTR_WORK`、
 `GTR_DEF`、`LUSTRE_HOME`、`DB_ROOT` 变量控制。
+
+## 引用
+
+使用本仓库代码请引用预印本：
+
+> Li, P. & Ni, J. **CRISPR mapping unveils global prevalence of viral predators of
+> Myxobacteria.** *bioRxiv* 2026.09.14.751636 (2026).
+> <https://doi.org/10.64898/2026.09.14.751636>
+
+作者：李鹏伟（Pengwei Li，
+[ORCID 0000-0003-0032-9749](https://orcid.org/0000-0003-0032-9749)）、
+倪晋仁（Jinren Ni，[ORCID 0000-0002-9114-8347](https://orcid.org/0000-0002-9114-8347)）。
+
+基金：国家自然科学基金（425B2048、51721006、92047303）。

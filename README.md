@@ -1,13 +1,33 @@
 # Predatory-bacterial-virome
 
-Code accompanying **"The virome of globally distributed myxobacteria"**
-(Li, P. & Ni, J.).
+Code accompanying **"CRISPR mapping unveils global prevalence of viral predators of
+Myxobacteria"** — Li, P. & Ni, J., *bioRxiv* (2026).
+
+[![DOI](https://img.shields.io/badge/bioRxiv-10.64898%2F2026.09.14.751636-b31b1b.svg)](https://doi.org/10.64898/2026.09.14.751636)
+
+Preprint: <https://www.biorxiv.org/content/10.64898/2026.09.14.751636v1>
 
 The repository contains every script of the study: the upstream bioinformatic pipeline
 that goes from the collected myxobacterial genomes to the viral catalogue and its
 annotation, and the R analysis scripts that produce the statistics and the figures.
 
 > 中文版说明见 **[README_zh.md](README_zh.md)**。
+
+---
+
+## Study in brief
+
+* **3,229** myxobacterial genomes from NCBI GenBank, six public datasets and this study
+  (Fig. S1) — the host side of the analysis.
+* CRISPR spacer-based host–virus linkage yields **790 non-redundant myxophages** (vOTUs)
+  across global ecosystems (Fig. 3), from 4,696 predator genomes annotated here.
+* The genomes encode 44,698 BGCs, 2,334 AMPs, 21,007 defense systems, 5,130 secretion
+  systems and 11,969 MGEs, whose cargo is analysed in `analyses/06_host_function` (Fig. 1).
+* Gene-sharing networks, whole-proteome phylogenies and inter-genomic comparison define
+  **six previously undescribed myxoviral lineages (MV-1 – MV-6)**
+  (`analyses/04_new_viral_groups`, `analyses/05_marker_phylogeny`, Fig. 4-5).
+* MV-1 carries both an anti-CRISPR protein (*AcrIIA15*) and a *Cas12m* effector next to its
+  CRISPR arrays (`analyses/05_marker_phylogeny/02_Cas12m_tree_annotation.R`, Fig. 6).
 
 ---
 
@@ -73,9 +93,9 @@ lists the variables it needs.
 ## Data availability
 
 The repository is code-only. The myxobacterial genome collection, the viral catalogue and
-the annotation tables are provided as Supplementary Data of the paper; reads of the newly
-recovered MAGs are available from the NCBI SRA under the accession given in the paper.
-The directory layout the scripts expect is documented in
+the annotation tables are provided as Supplementary Data of the preprint; reads of the
+newly recovered MAGs are available from the NCBI SRA under the accession given in the
+preprint. The directory layout the scripts expect is documented in
 [docs/04_data_availability.md](docs/04_data_availability.md).
 
 ## Note on the previous layout
@@ -91,3 +111,27 @@ placeholders were dropped.
 No absolute path, user home directory or local Windows folder remains in the repository:
 everything is handled by the `GTR_DATA`, `GTR_WORK`, `GTR_DEF`, `LUSTRE_HOME` and
 `DB_ROOT` variables.
+
+## Citation
+
+If you use this code, please cite the preprint:
+
+> Li, P. & Ni, J. **CRISPR mapping unveils global prevalence of viral predators of
+> Myxobacteria.** *bioRxiv* 2026.09.14.751636 (2026).
+> <https://doi.org/10.64898/2026.09.14.751636>
+
+```bibtex
+@article{Li2026myxophage,
+  title   = {CRISPR mapping unveils global prevalence of viral predators of Myxobacteria},
+  author  = {Li, Pengwei and Ni, Jinren},
+  journal = {bioRxiv},
+  year    = {2026},
+  doi     = {10.64898/2026.09.14.751636},
+  note    = {Posted 16 September 2026}
+}
+```
+
+Authors: Pengwei Li ([ORCID 0000-0003-0032-9749](https://orcid.org/0000-0003-0032-9749)),
+Jinren Ni ([ORCID 0000-0002-9114-8347](https://orcid.org/0000-0002-9114-8347)).
+
+Funding: National Natural Science Foundation of China (425B2048, 51721006, 92047303).

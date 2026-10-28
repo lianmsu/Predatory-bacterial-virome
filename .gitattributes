@@ -1,0 +1,16 @@
+# Normalise line endings: LF in the repository and in every checkout, so that the
+# shell scripts stay executable on Linux/macOS whatever the local autocrlf setting is.
+* text=auto eol=lf
+
+*.sh   text eol=lf
+*.py   text eol=lf
+*.R    text eol=lf
+*.md   text eol=lf
+*.txt  text eol=lf
+*.tsv  text eol=lf
+*.csv  text eol=lf
+
+*.pdf  binary
+*.png  binary
+*.tif  binary
+*.tiff binary
